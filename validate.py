@@ -2,6 +2,8 @@ from validateDisposable import validateDisposable, disposableDomains
 from validateDNS import validateDNS
 from validateMX import validateMX
 from validateRegex import validateRegex
+from filterAndDelete import filterAndDelete
+from filterAndKeep import filterAndKeep
 from read import read
 import xlsxwriter
 
@@ -10,7 +12,16 @@ def main():
     disposable_domains = disposableDomains("disposable list.txt")
 
     excel_file_path = "emails.xlsx"
+    
     emails_to_validate = read(excel_file_path)
+    
+    # filterAndDelete
+    # domains_to_delete = ['oksel.pl']
+    # emails_to_validate = filterAndDelete(emails_to_validate, domains_to_delete)
+
+    # filterAndKeep
+    # domains_to_keep = ['oksel.pl']
+    # emails_to_validate = filterAndKeep(emails_to_validate, domains_to_keep)
     
     excel = xlsxwriter.Workbook('valid ' + excel_file_path)
     worksheet = excel.add_worksheet('valid emails')
