@@ -13,7 +13,7 @@ def main():
     emails_to_validate = read(excel_file_path)
     
     excel = xlsxwriter.Workbook('valid ' + excel_file_path)
-    worksheet = excel.add_worksheet('sheet name')
+    worksheet = excel.add_worksheet('valid emails')
     row = 0
     column = 0
     

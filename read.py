@@ -6,4 +6,7 @@ def read(file_path):
     first_sheet = list(read.keys())[0]
     first_column = read[first_sheet].iloc[:, 0]
     
-    return first_column.tolist()
+    no_duplicates = first_column.drop_duplicates(keep='first')
+    result = no_duplicates.tolist()
+    
+    return result
