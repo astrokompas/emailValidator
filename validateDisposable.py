@@ -3,6 +3,9 @@ def disposableDomains(file_path):
         return [line.strip() for line in file]
 
 def validateDisposable(email, disposable_domains):
+    if '@' not in email:
+        return False
+    
     domain = email.split('@')[1]
 
     for disposable_domain in disposable_domains:

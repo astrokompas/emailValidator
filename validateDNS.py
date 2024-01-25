@@ -1,6 +1,9 @@
 import socket
 
 def validateDNS(email):
+    if '@' not in email:
+        return False
+    
     domain = email.split('@')[1]
 
     try:

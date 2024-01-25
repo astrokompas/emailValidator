@@ -1,6 +1,9 @@
 import socket
 
 def validateMX(email, ports):
+    if '@' not in email:
+        return False
+    
     domain = email.split('@')[1]
 
     for port in ports:
