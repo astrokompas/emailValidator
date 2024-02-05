@@ -11,16 +11,16 @@ import xlsxwriter
 def main():
     disposable_domains = disposableDomains("disposable list.txt")
 
-    excel_file_path = "emails.xlsx"
+    excel_file_path = "file.xlsx"
     
     emails_to_validate = read(excel_file_path)
     
     # filterAndDelete
-    # domains_to_delete = ['oksel.pl']
+    # domains_to_delete = ['domain.com']
     # emails_to_validate = filterAndDelete(emails_to_validate, domains_to_delete)
 
     # filterAndKeep
-    # domains_to_keep = ['oksel.pl']
+    # domains_to_keep = ['domain.com']
     # emails_to_validate = filterAndKeep(emails_to_validate, domains_to_keep)
     
     excel = xlsxwriter.Workbook('valid ' + excel_file_path)
